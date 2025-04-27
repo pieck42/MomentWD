@@ -1,0 +1,41 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# 开发命令指南
+
+## 运行项目
+要运行开发服务器：
+```bash
+cd code/momentwd
+npm run dev
+```
+
+## 安装
+如果需要安装依赖项：
+```bash
+cd code/momentwd
+npm install
+```
+
+## 数据库
+运行数据库迁移：
+```bash
+cd code/momentwd
+npx prisma migrate dev
+```
+
+打开Prisma Studio进行数据库管理：
+```bash
+cd code/momentwd
+npx prisma studio
+```
+
+## 构建
+构建生产环境项目：
+```bash
+cd code/momentwd
+npm run build
+```
+

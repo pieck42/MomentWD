@@ -1,0 +1,30 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# Next.js 功能指南
+
+本项目使用 Next.js App Router，具有以下关键功能：
+
+## App Router（应用路由器）
+- 页面在 [code/momentwd/app](mdc:code/momentwd/app) 目录中定义
+- 每个路由都有自己的目录，包含 `page.tsx` 文件
+- 布局组件在 `layout.tsx` 文件中定义
+
+## 身份验证
+- 使用 NextAuth.js 进行身份验证
+- 身份验证配置在 [code/momentwd/app/api/auth/[...nextauth]/route.ts](mdc:code/momentwd/app/api/auth/[...nextauth]/route.ts)
+- 身份验证组件在 [code/momentwd/app/components/auth](mdc:code/momentwd/app/components/auth)
+
+## 数据存储
+- 使用 Prisma ORM 进行数据库访问
+- 数据库模式在 [code/momentwd/prisma/schema.prisma](mdc:code/momentwd/prisma/schema.prisma) 中定义
+
+## 主要页面
+- 首页: [code/momentwd/app/page.tsx](mdc:code/momentwd/app/page.tsx)
+- 登录页面: [code/momentwd/app/login/page.tsx](mdc:code/momentwd/app/login/page.tsx)
+- 时间线页面: [code/momentwd/app/timeline/page.tsx](mdc:code/momentwd/app/timeline/page.tsx)
+- 上传页面: [code/momentwd/app/upload/page.tsx](mdc:code/momentwd/app/upload/page.tsx)
+
+

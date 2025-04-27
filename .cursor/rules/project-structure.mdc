@@ -1,0 +1,23 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# 项目结构指南
+
+本项目是一个 Next.js 网络应用程序，主要代码位于 `code/momentwd` 目录中。
+
+## 主要入口点
+- 主要入口点位于 [code/momentwd/app/page.tsx](mdc:code/momentwd/app/page.tsx)
+- 身份验证在 [code/momentwd/app/api/auth/[...nextauth]/route.ts](mdc:code/momentwd/app/api/auth/[...nextauth]/route.ts) 中处理
+
+## 关键目录
+- Next.js App Router 页面位于 [code/momentwd/app](mdc:code/momentwd/app)
+- 组件位于 [code/momentwd/app/components](mdc:code/momentwd/app/components)
+- 数据库模型和迁移位于 [code/momentwd/prisma](mdc:code/momentwd/prisma)
+
+## 重要文件
+- 包配置：[code/momentwd/package.json](mdc:code/momentwd/package.json)
+- Next.js 配置：[code/momentwd/next.config.ts](mdc:code/momentwd/next.config.ts)
+- TypeScript 配置：[code/momentwd/tsconfig.json](mdc:code/momentwd/tsconfig.json)
+
