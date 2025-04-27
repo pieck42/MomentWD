@@ -5,7 +5,7 @@ generator client {
 }
 
 datasource db {
-  provider = "sqlite" // 开发阶段使用SQLite，之后可以更换到PostgreSQL
+  provider = "postgresql" // 改用PostgreSQL以适应Vercel部署
   url      = env("DATABASE_URL")
 }
 
