@@ -1,13 +1,5 @@
 import NextAuth from 'next-auth';
 import CredentialsProvider from 'next-auth/providers/credentials';
-// 暂时注释掉Prisma导入
-// import { PrismaClient } from '@prisma/client';
-
-// 此处只是简单的模拟示例
-// 实际项目需要加入密码哈希处理等安全措施
-
-// 暂时注释掉Prisma初始化
-// const prisma = new PrismaClient();
 
 // 模拟用户数据，用于快速部署
 const mockUsers = [
@@ -34,7 +26,7 @@ const handler = NextAuth({
         }
 
         try {
-          // 使用模拟数据代替Prisma查询
+          // 使用模拟数据而不是数据库
           const user = mockUsers.find(user => user.email === credentials.email);
 
           if (user && user.password === credentials.password) {

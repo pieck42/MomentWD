@@ -1,4 +1,5 @@
 // 这是我们的Prisma数据库模型
+// 暂时不使用Prisma，后期将重新启用此配置
 
 generator client {
   provider = "prisma-client-js"
