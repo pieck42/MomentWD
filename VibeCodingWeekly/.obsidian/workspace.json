@@ -53,8 +53,7 @@
               "title": "记录"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -127,13 +126,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "进度.md",
+                "file": "记录.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "进度 的大纲"
+              "title": "记录 的大纲"
             }
           },
           {
@@ -200,10 +199,11 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "ac6f965545fef25c",
+  "active": "c921c71987611509",
   "lastOpenFiles": [
-    "记录.md",
+    "Archive/Attachment/Pasted image 20250428045213.png",
     "进度.md",
+    "记录.md",
     "Archive/Attachment/Pasted image 20250428042424.png",
     "Archive/Attachment/Pasted image 20250428042354.png",
     "Archive/Attachment/Pasted image 20250428041920.png",
