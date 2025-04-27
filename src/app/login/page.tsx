@@ -41,15 +41,15 @@ export default function Login() {
 
   return (
     <main className="container mx-auto p-4 max-w-md min-h-[80vh] flex flex-col justify-center">
-      <div className="bg-white p-8 border rounded-lg shadow-sm">
-        <h1 className="text-2xl font-bold mb-6 text-center">
+      <div className="card p-8">
+        <h1 className="text-2xl font-bold mb-6 text-center text-[var(--title)]">
           {isLogin ? '登录账号' : '创建新账号'}
         </h1>
         
         <form onSubmit={handleSubmit}>
           {!isLogin && (
             <div className="mb-4">
-              <label className="block text-sm font-medium mb-1">
+              <label className="block text-sm font-medium mb-1 text-[var(--primary)]">
                 用户名
               </label>
               <input
@@ -57,14 +57,14 @@ export default function Login() {
                 name="name"
                 value={formData.name}
                 onChange={handleInputChange}
-                className="w-full px-3 py-2 border rounded-md"
+                className="w-full px-3 py-2 border border-[var(--border)] rounded-md focus:outline-none focus:ring-1 focus:ring-[var(--primary)] focus:border-[var(--primary)]"
                 required={!isLogin}
               />
             </div>
           )}
           
           <div className="mb-4">
-            <label className="block text-sm font-medium mb-1">
+            <label className="block text-sm font-medium mb-1 text-[var(--primary)]">
               电子邮箱
             </label>
             <input
@@ -72,13 +72,13 @@ export default function Login() {
               name="email"
               value={formData.email}
               onChange={handleInputChange}
-              className="w-full px-3 py-2 border rounded-md"
+              className="w-full px-3 py-2 border border-[var(--border)] rounded-md focus:outline-none focus:ring-1 focus:ring-[var(--primary)] focus:border-[var(--primary)]"
               required
             />
           </div>
           
           <div className="mb-6">
-            <label className="block text-sm font-medium mb-1">
+            <label className="block text-sm font-medium mb-1 text-[var(--primary)]">
               密码
             </label>
             <input
@@ -86,7 +86,7 @@ export default function Login() {
               name="password"
               value={formData.password}
               onChange={handleInputChange}
-              className="w-full px-3 py-2 border rounded-md"
+              className="w-full px-3 py-2 border border-[var(--border)] rounded-md focus:outline-none focus:ring-1 focus:ring-[var(--primary)] focus:border-[var(--primary)]"
               required
             />
           </div>
@@ -96,8 +96,8 @@ export default function Login() {
             disabled={loading}
             className={`w-full px-4 py-2 rounded-md ${
               loading
-                ? 'bg-gray-300 cursor-not-allowed'
-                : 'bg-blue-600 text-white hover:bg-blue-700'
+                ? 'bg-[var(--muted)] cursor-not-allowed'
+                : 'btn-primary'
             }`}
           >
             {loading ? '处理中...' : isLogin ? '登录' : '注册'}
@@ -107,14 +107,14 @@ export default function Login() {
         <div className="mt-6 text-center">
           <button
             onClick={() => setIsLogin(!isLogin)}
-            className="text-blue-600 hover:underline"
+            className="text-[var(--primary)] hover:underline"
           >
             {isLogin ? '没有账号？创建新账号' : '已有账号？登录'}
           </button>
         </div>
         
         <div className="mt-4 text-center">
-          <Link href="/" className="text-gray-500 hover:underline text-sm">
+          <Link href="/" className="text-[var(--foreground)] opacity-60 hover:underline text-sm">
             返回首页
           </Link>
         </div>

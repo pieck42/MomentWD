@@ -1,8 +1,19 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f0f7f0;
+  --foreground: #2c3e2c;
+  --primary: #4a7c59;
+  --primary-light: #6b9e76;
+  --primary-dark: #355f43;
+  --title: #1e3a27;
+  --secondary: #a5d6a7;
+  --accent: #81c784;
+  --muted: #e8f5e9;
+  --border: #c8e6c9;
+  --card: #f9fdf9;
+  --shadow: rgba(46, 91, 54, 0.1);
+  --focus-ring: rgba(74, 124, 89, 0.25);
 }
 
 @theme inline {
@@ -14,8 +25,19 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #193419;
+    --foreground: #e1f0e1;
+    --primary: #5d9c6d;
+    --primary-light: #80ba8e;
+    --primary-dark: #437a52;
+    --title: #acdbb5;
+    --secondary: #81c784;
+    --accent: #66bb6a;
+    --muted: #2c502c;
+    --border: #3a6b3a;
+    --card: #1e3e1e;
+    --shadow: rgba(25, 52, 25, 0.4);
+    --focus-ring: rgba(93, 156, 109, 0.35);
   }
 }
 
@@ -23,4 +45,97 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  line-height: 1.6;
+}
+
+/* 标题样式 */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--title);
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+a {
+  color: var(--primary);
+  transition: color 0.2s ease, transform 0.2s ease;
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--primary-dark);
+}
+
+a:active {
+  transform: translateY(1px);
+}
+
+/* 自定义卡片样式 */
+.card {
+  background-color: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px var(--shadow);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  overflow: hidden;
+}
+
+.card:hover {
+  box-shadow: 0 6px 10px var(--shadow);
+}
+
+/* 按钮样式 */
+.btn-primary {
+  background-color: var(--primary);
+  color: white;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  font-weight: 500;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-dark);
+}
+
+.btn-primary:active {
+  transform: translateY(1px);
+}
+
+/* 输入框焦点样式 */
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px var(--focus-ring);
+}
+
+/* 自定义滚动条 */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-light);
+}
+
+/* 页面过渡动画 */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+main {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* 卡片悬浮动画 */
+.card.hover-lift:hover {
+  transform: translateY(-5px);
 }

@@ -64,22 +64,22 @@ export default function Upload() {
 
   return (
     <main className="container mx-auto p-4 max-w-4xl">
-      <h1 className="text-3xl font-bold mb-6">上传票根</h1>
+      <h1 className="text-3xl font-bold mb-6 text-[var(--title)]">上传票根</h1>
       
       <div className="grid md:grid-cols-2 gap-8">
-        <div className="border rounded-lg p-4">
-          <h2 className="text-xl font-semibold mb-4">上传照片</h2>
+        <div className="card p-4">
+          <h2 className="text-xl font-semibold mb-4 text-[var(--title)]">上传照片</h2>
           <div className="mb-4">
             <input
               type="file"
               accept="image/*"
               onChange={handleFileChange}
-              className="block w-full text-sm text-gray-500
+              className="block w-full text-sm
                 file:mr-4 file:py-2 file:px-4
                 file:rounded-full file:border-0
                 file:text-sm file:font-semibold
-                file:bg-blue-50 file:text-blue-700
-                hover:file:bg-blue-100"
+                file:bg-[var(--muted)] file:text-[var(--primary-dark)]
+                hover:file:bg-[var(--secondary)]"
             />
           </div>
           
@@ -94,14 +94,14 @@ export default function Upload() {
             </div>
           )}
           
-          <div className="text-sm text-gray-500">
+          <div className="text-sm opacity-80">
             <p>支持JPG、PNG格式的图片</p>
             <p>请确保图片清晰，以便系统能够准确提取信息</p>
           </div>
         </div>
         
-        <div className="border rounded-lg p-4">
-          <h2 className="text-xl font-semibold mb-4">票根信息</h2>
+        <div className="card p-4">
+          <h2 className="text-xl font-semibold mb-4 text-[var(--title)]">票根信息</h2>
           <form onSubmit={handleSubmit}>
             <div className="mb-4">
               <label className="block text-sm font-medium mb-1">
@@ -112,7 +112,7 @@ export default function Upload() {
                 name="title"
                 value={ticketInfo.title}
                 onChange={handleInputChange}
-                className="w-full px-3 py-2 border rounded-md"
+                className="w-full px-3 py-2 border border-[var(--border)] rounded-md focus:outline-none focus:ring-1 focus:ring-[var(--primary)] focus:border-[var(--primary)]"
                 required
               />
             </div>
@@ -126,7 +126,7 @@ export default function Upload() {
                 name="date"
                 value={ticketInfo.date}
                 onChange={handleInputChange}
-                className="w-full px-3 py-2 border rounded-md"
+                className="w-full px-3 py-2 border border-[var(--border)] rounded-md focus:outline-none focus:ring-1 focus:ring-[var(--primary)] focus:border-[var(--primary)]"
               />
             </div>
             
@@ -139,7 +139,7 @@ export default function Upload() {
                 name="venue"
                 value={ticketInfo.venue}
                 onChange={handleInputChange}
-                className="w-full px-3 py-2 border rounded-md"
+                className="w-full px-3 py-2 border border-[var(--border)] rounded-md focus:outline-none focus:ring-1 focus:ring-[var(--primary)] focus:border-[var(--primary)]"
               />
             </div>
             
@@ -152,7 +152,7 @@ export default function Upload() {
                 name="price"
                 value={ticketInfo.price}
                 onChange={handleInputChange}
-                className="w-full px-3 py-2 border rounded-md"
+                className="w-full px-3 py-2 border border-[var(--border)] rounded-md focus:outline-none focus:ring-1 focus:ring-[var(--primary)] focus:border-[var(--primary)]"
               />
             </div>
             
@@ -164,7 +164,7 @@ export default function Upload() {
                 name="description"
                 value={ticketInfo.description}
                 onChange={handleInputChange}
-                className="w-full px-3 py-2 border rounded-md"
+                className="w-full px-3 py-2 border border-[var(--border)] rounded-md focus:outline-none focus:ring-1 focus:ring-[var(--primary)] focus:border-[var(--primary)]"
                 rows={3}
               />
             </div>
@@ -175,14 +175,14 @@ export default function Upload() {
                 disabled={!file || loading}
                 className={`px-4 py-2 rounded-md ${
                   !file || loading
-                    ? 'bg-gray-300 cursor-not-allowed'
-                    : 'bg-blue-600 text-white hover:bg-blue-700'
+                    ? 'bg-[var(--muted)] cursor-not-allowed'
+                    : 'btn-primary'
                 }`}
               >
                 {loading ? '处理中...' : '保存票根'}
               </button>
               
-              <Link href="/" className="px-4 py-2 border rounded-md hover:bg-gray-50">
+              <Link href="/" className="px-4 py-2 border border-[var(--border)] rounded-md hover:bg-[var(--muted)]">
                 取消
               </Link>
             </div>
