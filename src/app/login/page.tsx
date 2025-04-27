@@ -41,15 +41,15 @@ export default function Login() {
 
   return (
     <main className="container mx-auto p-4 max-w-md min-h-[80vh] flex flex-col justify-center">
-      <div className="card p-8 shadow-sm">
-        <h1 className="text-2xl font-bold mb-6 text-center text-[hsl(142,76%,45%)]">
+      <div className="bg-white p-8 border rounded-lg shadow-sm">
+        <h1 className="text-2xl font-bold mb-6 text-center">
           {isLogin ? '登录账号' : '创建新账号'}
         </h1>
         
         <form onSubmit={handleSubmit}>
           {!isLogin && (
             <div className="mb-4">
-              <label className="block text-sm font-medium mb-1 text-[hsl(118,5%,35%)]">
+              <label className="block text-sm font-medium mb-1">
                 用户名
               </label>
               <input
@@ -57,14 +57,14 @@ export default function Login() {
                 name="name"
                 value={formData.name}
                 onChange={handleInputChange}
-                className="w-full px-3 py-2 border border-[hsl(118,30%,50%)] rounded-md focus:outline-none focus:ring-2 focus:ring-[hsl(142,76%,45%)]"
+                className="w-full px-3 py-2 border rounded-md"
                 required={!isLogin}
               />
             </div>
           )}
           
           <div className="mb-4">
-            <label className="block text-sm font-medium mb-1 text-[hsl(118,5%,35%)]">
+            <label className="block text-sm font-medium mb-1">
               电子邮箱
             </label>
             <input
@@ -72,13 +72,13 @@ export default function Login() {
               name="email"
               value={formData.email}
               onChange={handleInputChange}
-              className="w-full px-3 py-2 border border-[hsl(118,30%,50%)] rounded-md focus:outline-none focus:ring-2 focus:ring-[hsl(142,76%,45%)]"
+              className="w-full px-3 py-2 border rounded-md"
               required
             />
           </div>
           
           <div className="mb-6">
-            <label className="block text-sm font-medium mb-1 text-[hsl(118,5%,35%)]">
+            <label className="block text-sm font-medium mb-1">
               密码
             </label>
             <input
@@ -86,7 +86,7 @@ export default function Login() {
               name="password"
               value={formData.password}
               onChange={handleInputChange}
-              className="w-full px-3 py-2 border border-[hsl(118,30%,50%)] rounded-md focus:outline-none focus:ring-2 focus:ring-[hsl(142,76%,45%)]"
+              className="w-full px-3 py-2 border rounded-md"
               required
             />
           </div>
@@ -96,8 +96,8 @@ export default function Login() {
             disabled={loading}
             className={`w-full px-4 py-2 rounded-md ${
               loading
-                ? 'bg-[hsl(80,30%,85%)] cursor-not-allowed'
-                : 'bg-[hsl(142,76%,45%)] text-white hover:bg-[hsl(142,76%,40%)]'
+                ? 'bg-gray-300 cursor-not-allowed'
+                : 'bg-blue-600 text-white hover:bg-blue-700'
             }`}
           >
             {loading ? '处理中...' : isLogin ? '登录' : '注册'}
@@ -107,14 +107,14 @@ export default function Login() {
         <div className="mt-6 text-center">
           <button
             onClick={() => setIsLogin(!isLogin)}
-            className="text-[hsl(142,76%,45%)] hover:underline"
+            className="text-blue-600 hover:underline"
           >
             {isLogin ? '没有账号？创建新账号' : '已有账号？登录'}
           </button>
         </div>
         
         <div className="mt-4 text-center">
-          <Link href="/" className="text-[hsl(118,5%,35%)] hover:underline text-sm">
+          <Link href="/" className="text-gray-500 hover:underline text-sm">
             返回首页
           </Link>
         </div>

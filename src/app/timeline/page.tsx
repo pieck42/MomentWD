@@ -64,7 +64,7 @@ export default function Timeline() {
   if (loading) {
     return (
       <div className="container mx-auto p-4 flex justify-center items-center min-h-[60vh]">
-        <p className="text-xl text-[hsl(118,5%,35%)]">加载中...</p>
+        <p className="text-xl">加载中...</p>
       </div>
     );
   }
@@ -72,42 +72,42 @@ export default function Timeline() {
   return (
     <main className="container mx-auto p-4 max-w-4xl">
       <div className="flex justify-between items-center mb-6">
-        <h1 className="text-3xl font-bold text-[hsl(142,76%,45%)]">我的票根时间线</h1>
+        <h1 className="text-3xl font-bold">我的票根时间线</h1>
         <Link 
           href="/upload"
-          className="bg-[hsl(142,76%,45%)] text-white px-4 py-2 rounded-md hover:bg-[hsl(142,76%,40%)]"
+          className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700"
         >
           添加票根
         </Link>
       </div>
       
       {ticketStubs.length === 0 ? (
-        <div className="text-center py-16 card">
-          <p className="text-xl text-[hsl(118,5%,35%)] mb-4">还没有收藏任何票根</p>
+        <div className="text-center py-16 border rounded-lg">
+          <p className="text-xl text-gray-500 mb-4">还没有收藏任何票根</p>
           <Link 
             href="/upload"
-            className="bg-[hsl(142,76%,45%)] text-white px-4 py-2 rounded-md hover:bg-[hsl(142,76%,40%)]"
+            className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700"
           >
             上传第一张票根
           </Link>
         </div>
       ) : (
-        <div className="relative border-l-2 border-[hsl(118,30%,50%)] ml-3 pl-8 space-y-10">
+        <div className="relative border-l-2 border-gray-200 ml-3 pl-8 space-y-10">
           {ticketStubs.map((ticket) => (
             <div key={ticket.id} className="relative">
               {/* 时间线上的圆点 */}
-              <div className="absolute w-4 h-4 bg-[hsl(142,76%,45%)] rounded-full -left-[38px] top-0 mt-1"></div>
+              <div className="absolute w-4 h-4 bg-blue-600 rounded-full -left-[38px] top-0 mt-1"></div>
               
-              <div className="card shadow-sm overflow-hidden">
+              <div className="border rounded-lg shadow-sm overflow-hidden">
                 <div className="p-4">
                   <div className="flex justify-between items-start">
-                    <h2 className="text-xl font-semibold mb-2 text-[hsl(118,5%,15%)]">{ticket.title}</h2>
-                    <span className="bg-[hsl(118,30%,85%)] text-[hsl(142,76%,45%)] text-xs font-medium px-2.5 py-0.5 rounded">
+                    <h2 className="text-xl font-semibold mb-2">{ticket.title}</h2>
+                    <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">
                       {ticket.price}
                     </span>
                   </div>
                   
-                  <div className="text-sm text-[hsl(118,5%,35%)] mb-2">
+                  <div className="text-sm text-gray-600 mb-2">
                     <div className="flex gap-2 mb-1">
                       <span className="font-medium">日期:</span>
                       <span>{ticket.date}</span>
@@ -119,12 +119,12 @@ export default function Timeline() {
                   </div>
                   
                   {ticket.description && (
-                    <p className="text-[hsl(118,5%,25%)] mb-3">{ticket.description}</p>
+                    <p className="text-gray-700 mb-3">{ticket.description}</p>
                   )}
                   
                   {/* 票根占位图 */}
-                  <div className="aspect-[2/1] relative rounded-lg overflow-hidden bg-[hsl(118,30%,85%)] flex justify-center items-center border border-[hsl(118,30%,50%)]">
-                    <p className="text-[hsl(118,5%,35%)]">票根照片</p>
+                  <div className="aspect-[2/1] relative rounded-lg overflow-hidden bg-gray-100 flex justify-center items-center">
+                    <p className="text-gray-400">票根照片</p>
                   </div>
                 </div>
               </div>

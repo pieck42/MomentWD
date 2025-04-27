@@ -64,27 +64,27 @@ export default function Upload() {
 
   return (
     <main className="container mx-auto p-4 max-w-4xl">
-      <h1 className="text-3xl font-bold mb-6 text-[hsl(142,76%,45%)]">上传票根</h1>
+      <h1 className="text-3xl font-bold mb-6">上传票根</h1>
       
       <div className="grid md:grid-cols-2 gap-8">
-        <div className="card p-4">
-          <h2 className="text-xl font-semibold mb-4 text-[hsl(118,5%,15%)]">上传照片</h2>
+        <div className="border rounded-lg p-4">
+          <h2 className="text-xl font-semibold mb-4">上传照片</h2>
           <div className="mb-4">
             <input
               type="file"
               accept="image/*"
               onChange={handleFileChange}
-              className="block w-full text-sm text-[hsl(118,5%,35%)]
+              className="block w-full text-sm text-gray-500
                 file:mr-4 file:py-2 file:px-4
                 file:rounded-full file:border-0
                 file:text-sm file:font-semibold
-                file:bg-[hsl(118,30%,85%)] file:text-[hsl(142,76%,45%)]
-                hover:file:bg-[hsl(118,30%,80%)]"
+                file:bg-blue-50 file:text-blue-700
+                hover:file:bg-blue-100"
             />
           </div>
           
           {preview && (
-            <div className="aspect-video relative rounded-lg overflow-hidden mb-4 border border-[hsl(118,30%,50%)]">
+            <div className="aspect-video relative rounded-lg overflow-hidden mb-4">
               <Image 
                 src={preview} 
                 alt="票根预览" 
@@ -94,17 +94,17 @@ export default function Upload() {
             </div>
           )}
           
-          <div className="text-sm text-[hsl(118,5%,35%)]">
+          <div className="text-sm text-gray-500">
             <p>支持JPG、PNG格式的图片</p>
             <p>请确保图片清晰，以便系统能够准确提取信息</p>
           </div>
         </div>
         
-        <div className="card p-4">
-          <h2 className="text-xl font-semibold mb-4 text-[hsl(118,5%,15%)]">票根信息</h2>
+        <div className="border rounded-lg p-4">
+          <h2 className="text-xl font-semibold mb-4">票根信息</h2>
           <form onSubmit={handleSubmit}>
             <div className="mb-4">
-              <label className="block text-sm font-medium mb-1 text-[hsl(118,5%,35%)]">
+              <label className="block text-sm font-medium mb-1">
                 标题/名称
               </label>
               <input
@@ -112,13 +112,13 @@ export default function Upload() {
                 name="title"
                 value={ticketInfo.title}
                 onChange={handleInputChange}
-                className="w-full px-3 py-2 border border-[hsl(118,30%,50%)] rounded-md focus:outline-none focus:ring-2 focus:ring-[hsl(142,76%,45%)]"
+                className="w-full px-3 py-2 border rounded-md"
                 required
               />
             </div>
             
             <div className="mb-4">
-              <label className="block text-sm font-medium mb-1 text-[hsl(118,5%,35%)]">
+              <label className="block text-sm font-medium mb-1">
                 日期
               </label>
               <input
@@ -126,12 +126,12 @@ export default function Upload() {
                 name="date"
                 value={ticketInfo.date}
                 onChange={handleInputChange}
-                className="w-full px-3 py-2 border border-[hsl(118,30%,50%)] rounded-md focus:outline-none focus:ring-2 focus:ring-[hsl(142,76%,45%)]"
+                className="w-full px-3 py-2 border rounded-md"
               />
             </div>
             
             <div className="mb-4">
-              <label className="block text-sm font-medium mb-1 text-[hsl(118,5%,35%)]">
+              <label className="block text-sm font-medium mb-1">
                 场馆/地点
               </label>
               <input
@@ -139,12 +139,12 @@ export default function Upload() {
                 name="venue"
                 value={ticketInfo.venue}
                 onChange={handleInputChange}
-                className="w-full px-3 py-2 border border-[hsl(118,30%,50%)] rounded-md focus:outline-none focus:ring-2 focus:ring-[hsl(142,76%,45%)]"
+                className="w-full px-3 py-2 border rounded-md"
               />
             </div>
             
             <div className="mb-4">
-              <label className="block text-sm font-medium mb-1 text-[hsl(118,5%,35%)]">
+              <label className="block text-sm font-medium mb-1">
                 价格
               </label>
               <input
@@ -152,19 +152,19 @@ export default function Upload() {
                 name="price"
                 value={ticketInfo.price}
                 onChange={handleInputChange}
-                className="w-full px-3 py-2 border border-[hsl(118,30%,50%)] rounded-md focus:outline-none focus:ring-2 focus:ring-[hsl(142,76%,45%)]"
+                className="w-full px-3 py-2 border rounded-md"
               />
             </div>
             
             <div className="mb-4">
-              <label className="block text-sm font-medium mb-1 text-[hsl(118,5%,35%)]">
+              <label className="block text-sm font-medium mb-1">
                 描述
               </label>
               <textarea
                 name="description"
                 value={ticketInfo.description}
                 onChange={handleInputChange}
-                className="w-full px-3 py-2 border border-[hsl(118,30%,50%)] rounded-md focus:outline-none focus:ring-2 focus:ring-[hsl(142,76%,45%)]"
+                className="w-full px-3 py-2 border rounded-md"
                 rows={3}
               />
             </div>
@@ -175,14 +175,14 @@ export default function Upload() {
                 disabled={!file || loading}
                 className={`px-4 py-2 rounded-md ${
                   !file || loading
-                    ? 'bg-[hsl(80,30%,85%)] cursor-not-allowed'
-                    : 'bg-[hsl(142,76%,45%)] text-white hover:bg-[hsl(142,76%,40%)]'
+                    ? 'bg-gray-300 cursor-not-allowed'
+                    : 'bg-blue-600 text-white hover:bg-blue-700'
                 }`}
               >
                 {loading ? '处理中...' : '保存票根'}
               </button>
               
-              <Link href="/" className="px-4 py-2 border border-[hsl(118,30%,50%)] rounded-md hover:bg-[hsl(118,30%,85%)]">
+              <Link href="/" className="px-4 py-2 border rounded-md hover:bg-gray-50">
                 取消
               </Link>
             </div>
