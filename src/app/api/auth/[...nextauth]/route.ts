@@ -63,7 +63,7 @@ const handler = NextAuth({
     },
     async session({ session, token }) {
       if (session.user) {
-        // @ts-ignore
+        // @ts-expect-error - 添加ID到session.user
         session.user.id = token.id;
       }
       return session;
