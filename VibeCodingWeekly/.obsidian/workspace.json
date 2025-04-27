@@ -40,21 +40,21 @@
             }
           },
           {
-            "id": "2e7cfe32adfa227c",
+            "id": "178d37a5fe100d30",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "进度.md",
+                "file": "记录.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "进度"
+              "title": "记录"
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -200,20 +200,20 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "2e7cfe32adfa227c",
+  "active": "ac6f965545fef25c",
   "lastOpenFiles": [
     "记录.md",
+    "进度.md",
+    "Archive/Attachment/Pasted image 20250428042424.png",
+    "Archive/Attachment/Pasted image 20250428042354.png",
+    "Archive/Attachment/Pasted image 20250428041920.png",
+    "Archive/Attachment/Pasted image 20250428041910.png",
+    "Archive/Attachment/Pasted image 20250428041853.png",
+    "Archive/Attachment/Pasted image 20250428041828.png",
+    "Archive/Attachment/Pasted image 20250428041723.png",
+    "Archive/Attachment/Pasted image 20250428041708.png",
     "Archive/Attachment/Pasted image 20250428035855.png",
     "Archive/Attachment/Pasted image 20250428035832.png",
-    "Archive/Attachment/Pasted image 20250428035648.png",
-    "进度.md",
-    "Archive/Attachment/Pasted image 20250428033214.png",
-    "Archive/Attachment/Pasted image 20250428033032.png",
-    "Archive/Attachment/Pasted image 20250428031948.png",
-    "Archive/Attachment/Pasted image 20250428031936.png",
-    "Archive/Attachment/Pasted image 20250428031349.png",
-    "Archive/Attachment/Pasted image 20250428031316.png",
-    "Archive/Attachment/Pasted image 20250428030631.png",
     "备忘录.md",
     "欢迎.md",
     "Archive/Attachment",
